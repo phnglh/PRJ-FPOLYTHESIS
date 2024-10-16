@@ -1,9 +1,7 @@
-import { ReactNode } from 'react';
-
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { cn } from '../lib/cn';
 
-export function AppLayout({ children }: { children: ReactNode }) {
+export function AppLayout() {
   return (
     <div className='flex flex-col h-screen'>
       <div className='flex items-center justify-between px-[6px] py-[10px]'>
@@ -42,7 +40,9 @@ export function AppLayout({ children }: { children: ReactNode }) {
           </nav>
         </div>
       </div>
-      <div className='flex-grow flex justify-center p-[6px]'>{children}</div>
+      <div className='flex-grow flex justify-center p-[6px]'>
+        <Outlet />
+      </div>
       <footer className='flex items-center justify-center px-[6px] py-[10px]'>
         <aside>
           <p className={cn('text-red-700')}>
